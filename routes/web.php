@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Backend\AuthController;
+use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,3 +22,8 @@ Route::get('/portfolio',[HomeController::class,'portfolio']);
 Route::get('/contact',[HomeController::class,'contact']);
 Route::get('/blog',[HomeController::class,'blog']);
 Route::get('/blog-post',[HomeController::class,'blog_post']);
+
+Route::get('/login',[AuthController::class,'login']);
+Route::get('/forgot',[AuthController::class,'forgot']);
+
+Route::get('/admin/dashboard',[DashboardController::class,'dashboard']);
