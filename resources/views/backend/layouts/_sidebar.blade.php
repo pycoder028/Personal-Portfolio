@@ -110,6 +110,15 @@
                         </p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ url('logout') }}" class="nav-link @if(Request::segment(2) == 'logout') active @endif" onclick="return confirm('Are you sure you want to Logout?');">
+                        <i class="nav-icon fas fa-sign-out-alt" style='font-size:20px;color:rgb(238, 54, 8)'></i>
+                        
+                        <p style="font-size: 20px;">
+                            Logout
+                        </p>
+                    </a>
+                </li>
               </ul>
           </nav>
           <!-- /.sidebar-menu -->
