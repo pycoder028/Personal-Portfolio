@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Session;
+use Mail;
+use App\Mail\ForgotPasswordMail;
+
 
 class AuthController extends Controller
 {
@@ -20,10 +23,6 @@ class AuthController extends Controller
         return view("backend.auth.login");
     }
 
-    public function forgot(Request $request){
-        
-        return view("backend.auth.forgot");
-    }
 
     public function login_admin(Request $request){
 
@@ -50,6 +49,7 @@ class AuthController extends Controller
         Auth::logout();
         return redirect(url('login'));
     }
+    
  
 
 }

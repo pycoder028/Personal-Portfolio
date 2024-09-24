@@ -3,10 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\HomeModel;
 
 class HomeController extends Controller
 {
     public function index(){
+
+        $data['getrecord'] = HomeModel::all();
+
         $data['meta_title'] = 'Home';
         $data['className'] = 'home';
         return view("index",$data);

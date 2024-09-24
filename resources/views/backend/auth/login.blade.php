@@ -59,10 +59,6 @@
           <!-- /.col -->
         </div>
       </form>
-
-      <p class="mb-1">
-        <a  class="btn btn-outline-success mt-3" href="{{ url('/forgot') }}">I forgot my password</a>
-      </p>
     </div>
     <!-- /.login-card-body -->
   </div>
