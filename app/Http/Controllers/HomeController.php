@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\HomeModel;
+use App\Models\AboutModel;
 
 class HomeController extends Controller
 {
@@ -17,6 +18,9 @@ class HomeController extends Controller
     }
 
     public function about(){
+
+        $data['getrecord'] = AboutModel::all();
+
         $data['meta_title'] = 'About';
         $data['className'] = 'about';
         return view("about", $data);
