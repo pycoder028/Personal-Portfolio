@@ -2,12 +2,13 @@
 
 use App\Http\Controllers\Backend\AuthController;
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\PortfolioController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes
+| Web Routes 
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
@@ -44,4 +45,8 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('/admin/contact', [DashboardController::class, 'admin_contact']);
 
     Route::get('/admin/blog', [DashboardController::class, 'admin_blog']);
+
+
+    Route::get('/admin/portfolio/add', [PortfolioController::class, 'portfolio_add']);
+    Route::post('/admin/portfolio/add', [PortfolioController::class, 'portfolio_add_post']);
 });
