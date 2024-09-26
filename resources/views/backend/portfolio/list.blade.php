@@ -56,8 +56,8 @@
                         @endif
                       </td>
                       <td>
-                        <a href="" class="btn btn-outline-primary" style="border: none;"><i class="fas fa-edit"></i></a>
-                        <a href="" class="btn btn-outline-danger" style="border: none;"><i class="fas fa-trash"></i></a>
+                        <a href="{{ url('admin/portfolio/edit/'.$value->id) }}" class="btn btn-outline-primary"><i class="fas fa-edit"></i></a>
+                        <a href="{{ url('admin/portfolio/delete/'.$value->id) }}" onclick="return confirm('Are you sure you want to delete?')" class="btn btn-outline-danger"><i class="fas fa-trash"></i></a>
                       </td>
                     </tr>
                     @endforeach

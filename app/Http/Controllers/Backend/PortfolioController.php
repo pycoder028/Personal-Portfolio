@@ -36,5 +36,46 @@ class PortfolioController extends Controller
 
     }
 
+    public function admin_portfolio_edit(Request $request,$id){
+        $data['getrecord'] = PortfolioModel::findOrFail( $id );
+
+        return view('backend.portfolio.edit', $data);
+    }
+
+    public function admin_portfolio_edit_post(Request $request,$id){
+        //dd($request->all());
+        $updateRecord = PortfolioModel::findOrFail( $id );
+        $updateRecord->title = trim($request->title);
+
+        if(!empty($request->file('image'))){
+            if(!empty($updateRecord->image) && file_exists('public/portfolio/'. $updateRecord->image)){
+                unlink('public/portfolio/'. $updateRecord->image);
+            }
+            $file = $request->file('image');
+            $randomStr = Str::random(30);
+            $filename = $randomStr .'.'. $file->getClientOriginalExtension();
+            $file->move('public/portfolio/',$filename);
+            $updateRecord->image = $filename;
+        }
+        $updateRecord->save();
+
+        return redirect('admin/portfolio')->with('success','Portfolio Page Successfully Updated');
+
+    }
+
+    public function admin_portfolio_delete(Request $request,$id){
+
+        $deleteRecord = PortfolioModel::findOrFail( $id );
+
+        if(!empty($deleteRecord->image) && file_exists('public/portfolio/'.$deleteRecord->image)){
+            unlink('public/portfolio/'.$deleteRecord->image);
+        }
+
+        $deleteRecord->delete();
+
+        return redirect()->back()->with('error','Record Successfully Deleted');
+
+    }
+
 
 }
