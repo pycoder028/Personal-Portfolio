@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\HomeModel;
 use App\Models\AboutModel;
+use App\Models\PortfolioModel;
 
 class HomeController extends Controller
 {
@@ -27,6 +28,8 @@ class HomeController extends Controller
     }
 
     public function portfolio(){
+        $data['getrecord'] = PortfolioModel::get(); 
+
         $data['meta_title'] = 'Portfolio';
         $data['className'] = 'portfolio';
         return view("portfolio", $data);
