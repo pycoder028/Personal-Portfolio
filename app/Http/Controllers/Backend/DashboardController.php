@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Models\HomeModel;
 use App\Models\AboutModel;
+use App\Models\ContactModel;
 use App\Models\PortfolioModel;
 use Str;
 
@@ -114,8 +115,8 @@ class DashboardController extends Controller
     }
 
     public function admin_contact(Request $request){
-
-        return view("backend.contact.list");
+        $data['getrecord'] = ContactModel::get();
+        return view("backend.contact.list", $data);
     }
 
     public function admin_blog(Request $request){

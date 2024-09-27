@@ -54,6 +54,7 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('admin/portfolio/edit/{id}',[PortfolioController::class,'admin_portfolio_edit']);
     Route::post('admin/portfolio/edit/{id}',[PortfolioController::class,'admin_portfolio_edit_post']);
     Route::get('admin/portfolio/delete/{id}',[PortfolioController::class,'admin_portfolio_delete']);
+    Route::get('admin/contact/delete/{id}',[HomeController::class,'admin_contact_delete']);
 
 
 });

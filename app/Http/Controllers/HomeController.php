@@ -56,6 +56,13 @@ class HomeController extends Controller
         return redirect()->back()->with('success','Your Message submitted successfully');
     }
 
+    public function admin_contact_delete(Request $require, $id){
+        $removeDelete = ContactModel::findOrFail( $id );
+        $removeDelete->delete();
+
+        return redirect()->back()->with('error','Contact Record Successfully Deleted');
+    }
+
     public function blog(){
         $data['meta_title'] = 'Blog';
         $data['className'] = 'blog';
