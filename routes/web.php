@@ -15,12 +15,13 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider and all of them will
 | be assigned to the "web" middleware group. Make something great!
 |
-*/
+*/ 
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/about', [HomeController::class, 'about']);
 Route::get('/portfolio', [HomeController::class, 'portfolio']);
 Route::get('/contact', [HomeController::class, 'contact']);
+Route::post('/contact/post', [HomeController::class, 'contact_post']);
 Route::get('/blog', [HomeController::class, 'blog']);
 Route::get('/blog-post', [HomeController::class, 'blog_post']);
 

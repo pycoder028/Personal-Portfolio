@@ -27,7 +27,7 @@
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
-sssssss
+
         </div>
         <!-- /.row -->
         <!-- Main row -->

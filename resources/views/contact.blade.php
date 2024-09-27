@@ -10,7 +10,8 @@
 <!-- Main Content Starts -->
 <section class="main-content revealator-slideup revealator-once revealator-delay1">
     <div class="container">
-        <div class="row">
+        @include('_message')
+        <div class="row"> 
             <!-- Left Side Starts -->
             <div class="col-12 col-lg-4">
                 <h3 class="text-uppercase custom-title mb-0 ft-wt-600 pb-3">Don't be shy !</h3>
@@ -37,7 +38,8 @@
             <!-- Left Side Ends -->
             <!-- Contact Form Starts -->
             <div class="col-12 col-lg-8">
-                <form class="contactform" method="post" action="http://slimhamdi.net/tunis/dark/php/process-form.php">
+                <form method="post" action="{{ url('contact/post') }}">
+                    {{ csrf_field() }}
                     <div class="contactform">
                         <div class="row">
                             <div class="col-12 col-md-4">

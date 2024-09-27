@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\HomeModel;
 use App\Models\AboutModel;
 use App\Models\PortfolioModel;
+use App\Models\ContactModel;
 
 class HomeController extends Controller
 {
@@ -33,12 +34,26 @@ class HomeController extends Controller
         $data['meta_title'] = 'Portfolio';
         $data['className'] = 'portfolio';
         return view("portfolio", $data);
-    }
+    } 
 
     public function contact(){
         $data['meta_title'] = 'Contact';
         $data['className'] = 'contact';
         return view("contact", $data);
+    }
+
+    public function contact_post(Request $require){
+        //dd(request()->all());
+
+        $insertRecord = new ContactModel;
+        $insertRecord->name = trim($require->name);
+        $insertRecord->email = trim($require->email);
+        $insertRecord->subject = trim($require->subject);
+        $insertRecord->message = trim($require->message);
+
+        $insertRecord->save();
+
+        return redirect()->back()->with('success','Your Message submitted successfully');
     }
 
     public function blog(){
