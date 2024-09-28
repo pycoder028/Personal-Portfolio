@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\HomeModel;
 use App\Models\AboutModel;
+use App\Models\BlogModel;
+use App\Models\User;
 use App\Models\PortfolioModel;
 use App\Models\ContactModel;
 
@@ -64,12 +66,16 @@ class HomeController extends Controller
     }
 
     public function blog(){
+        
+        $data['getrecord'] = BlogModel::get();
         $data['meta_title'] = 'Blog';
         $data['className'] = 'blog';
         return view("blog", $data);
     }
 
-    public function blog_post(){
+    public function blog_post(Request $request, $id){
+
+        $data['getrecord'] = BlogModel::findOrFail( $id );
         $data['meta_title'] = 'Blog-Post';
         $data['className'] = 'blog-post';
         return view("blog-post", $data);

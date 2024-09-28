@@ -25,7 +25,7 @@ Route::get('/portfolio', [HomeController::class, 'portfolio']);
 Route::get('/contact', [HomeController::class, 'contact']);
 Route::post('/contact/post', [HomeController::class, 'contact_post']);
 Route::get('/blog', [HomeController::class, 'blog']);
-Route::get('/blog-post', [HomeController::class, 'blog_post']);
+Route::get('/blog-post/{id}', [HomeController::class, 'blog_post']);
 
 Route::get('/login', [AuthController::class, 'login']);
 Route::post('/login_admin', [AuthController::class, 'login_admin']);
