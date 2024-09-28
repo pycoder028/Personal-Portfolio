@@ -57,8 +57,8 @@
                       <td>{{ $value->title }}</td>
                       <td>{{ $value->description }}</td>
                       <td>
-                        <a href="#" class="btn btn-outline-primary"><i class="fas fa-edit"></i></a>
-                        <a href="#" onclick="return confirm('Are you sure you want to delete?')" class="btn btn-outline-danger"><i class="fas fa-trash"></i></a>
+                        <a href="{{ url('admin/blog/edit/'.$value->id) }}" class="btn btn-outline-primary"><i class="fas fa-edit"></i></a>
+                        <a href="{{ url('admin/blog/delete/'.$value->id) }}" onclick="return confirm('Are you sure you want to delete?')" class="btn btn-outline-danger"><i class="fas fa-trash"></i></a>
                       </td>
                     </tr>
                     @endforeach

@@ -52,6 +52,9 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('/admin/blog/add', [BlogController::class, 'admin_blog_add']);
     Route::post('/admin/blog/add', [BlogController::class, 'admin_blog_add_post']);
 
+    Route::get('admin/blog/edit/{id}',[BlogController::class,'admin_blog_edit']);
+    Route::post('admin/blog/edit/{id}',[BlogController::class,'admin_blog_edit_update']);
+    Route::get('admin/blog/delete/{id}',[BlogController::class,'admin_blog_delete']);
     
     Route::get('/admin/portfolio/add', [PortfolioController::class, 'portfolio_add']);
     Route::post('/admin/portfolio/add', [PortfolioController::class, 'portfolio_add_post']);
