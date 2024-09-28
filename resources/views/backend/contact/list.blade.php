@@ -50,7 +50,7 @@
                       <td>{{ $value->subject }}</td>
                       <td>{{ $value->message }}</td>
                       <td>
-                        <a onclick="return confirm('Are you sure you want to delete?')" href="{{ url('admin/contact/delete/'.$value->id) }}" class="btn btn-danger">Delete</a>
+                        <a onclick="return confirm('Are you sure you want to delete?')" href="{{ url('admin/contact/delete/'.$value->id) }}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
                       </td>
                     </tr>
                     @endforeach

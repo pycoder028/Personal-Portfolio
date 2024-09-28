@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Models\HomeModel;
 use App\Models\AboutModel;
+use App\Models\BlogModel;
 use App\Models\ContactModel;
 use App\Models\PortfolioModel;
 use Str;
@@ -121,7 +122,9 @@ class DashboardController extends Controller
 
     public function admin_blog(Request $request){
 
-        return view("backend.blog.list");
+        $data['getrecord'] = BlogModel::get();
+
+        return view("backend.blog.list", $data);
     }
     
 
