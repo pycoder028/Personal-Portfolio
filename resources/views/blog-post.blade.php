@@ -13,14 +13,9 @@
         <div class="row">
             <!-- Article Starts -->
             <article class="col-12">
-                <!-- Meta Starts -->
-                <div class="meta open-sans-font">
-                    <span class="date"><i class="fa fa-calendar"></i>{{ $getrecord->created_at}}</span>
-                </div>
-                <!-- Meta Ends -->
                 <!-- Article Content Starts -->
                 <h1 class="text-uppercase text-capitalize">{{ $getrecord->title }}</h1>
-                <img src="{{ asset('public/img/blog/blog-post-1.jpg') }}" class="img-fluid" alt="Blog image"/>
+                <img src="{{ url('public/blog/'.$getrecord->image) }}" class="img-fluid" alt="Blog image"/>
                 <div class="blog-excerpt open-sans-font pb-5">
                     <p>{{ $getrecord->description }}</p>
                 </div>
