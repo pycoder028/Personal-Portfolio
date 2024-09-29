@@ -9,6 +9,7 @@ use App\Models\BlogModel;
 use App\Models\User;
 use App\Models\PortfolioModel;
 use App\Models\ContactModel;
+use App\Models\SocialIconModel;
 
 class HomeController extends Controller
 {
@@ -39,6 +40,7 @@ class HomeController extends Controller
     } 
 
     public function contact(){
+        $data['getrecord'] = SocialIconModel::findOrFail(1);
         $data['meta_title'] = 'Contact';
         $data['className'] = 'contact';
         return view("contact", $data);

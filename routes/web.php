@@ -5,7 +5,7 @@ use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\PortfolioController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Backend\BlogController;
-
+use App\Http\Controllers\backend\SocialIconController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -62,7 +62,11 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('admin/portfolio/edit/{id}',[PortfolioController::class,'admin_portfolio_edit']);
     Route::post('admin/portfolio/edit/{id}',[PortfolioController::class,'admin_portfolio_edit_post']);
     Route::get('admin/portfolio/delete/{id}',[PortfolioController::class,'admin_portfolio_delete']);
+
     Route::get('admin/contact/delete/{id}',[HomeController::class,'admin_contact_delete']);
+
+    Route::get('admin/social_icon',[SocialIconController::class,'admin_social_icon']);
+    Route::post('admin/social_icon/update/{id}',[SocialIconController::class,'admin_social_icon_update']);
 
 
 });

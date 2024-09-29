@@ -111,6 +111,14 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{ url('admin/social_icon') }}" class="nav-link @if(Request::segment(2) == 'social_icon') active @endif">
+                        <i class="nav-icon fas fa-share-alt"></i>
+                        <p>
+                            Social Icon
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{ url('logout') }}" class="nav-link @if(Request::segment(2) == 'logout') active @endif" onclick="return confirm('Are you sure you want to Logout?');">
                         <i class="nav-icon fas fa-sign-out-alt" style='font-size:20px;color:rgb(238, 54, 8)'></i>
                         
